@@ -39,6 +39,7 @@ span {
 
 .player-2 {
     font-size: 1.2rem;
+    font-weight: bold;
     color: #461220;
     margin-top: 10px;
 }
@@ -83,6 +84,12 @@ button {
     color: #ecf8f8;
     border: none;
     border-radius: 5px;
+    border: 2px solid #0b3954;
+}
+
+button:hover {
+    border: 2px solid #ecf8f8;
+    transition: 0.3s;
 }
 
 .popup {
@@ -110,6 +117,12 @@ button {
     margin: 6% 15%;
     padding: 10px 20px;
     font-size: 1.2rem;
+}
+
+.absolute {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
 }
 
 /* Media Query */

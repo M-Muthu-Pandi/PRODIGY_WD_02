@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic-Tac-Toe with AI</title>
+    <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="../Images/Mu2 Website Icon.png">
 
     <!-- Font Awesome Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
 <body>
     <main class="container">
         <h1>
@@ -17,9 +19,9 @@
             <span class="color-2">Tac</span> -
             <span class="color-3">Toe</span>
         </h1>
-        <p class="player-2">Player VS AI</p>
+        <p class="player-2">Player VS Player</p>
 
-        <section id="board">
+        <section id="game-board">
             <div class="cell" data-index="0"></div>
             <div class="cell" data-index="1"></div>
             <div class="cell" data-index="2"></div>
@@ -32,10 +34,10 @@
         </section>
 
         <section>
-            <p id="game-status">It's <span>X</span>'s turn</p>
-            <button id="resetBtn">RESET</button>
+            <p id="status">Player <span>X</span>'s turn</p>
+            <button id="reset">RESET</button>
             <a href="../index.html"><button><i class="fa-solid fa-house"></i></button></a>
-            <a href="../Player_vs_Player/index.html"><button><i class="fa-solid fa-user"></i> vs <i class="fa-solid fa-user"></i></button></a>
+            <a href="../Player_vs_AI/index.html"><button><i class="fa-solid fa-user"></i> vs <i class="fa-solid fa-robot"></i></button></a>
         </section>
 
         <section class="popup">
@@ -48,4 +50,5 @@
     <p class="absolute">&copy Muthupandi <a href="https://www.linkedin.com/in/muthupandim/" target="_blank"><img src="../Images/linkedin-logo.png" alt="LinkedIn"></a> <a href="https://github.com/M-Muthu-Pandi" target="_blank"><img src="../Images/github.png" alt="GitHub"></a></p>
     <script src="script.js"></script>
 </body>
+
 </html>
