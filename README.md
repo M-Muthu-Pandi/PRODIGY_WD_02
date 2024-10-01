@@ -6,7 +6,7 @@ A simple web-based Tic Tac Toe game developed using **HTML**, **CSS**, and **Jav
 ## Live Demo
 
 You can check out the live demo of the game here:  
-**[Tic Tac Toe Game - Live Demo](https://your-live-demo-link.com)**
+**[Tic Tac Toe Game - Live Demo](https://m-muthu-pandi.github.io/PRODIGY_WD_02/)**
 
 
 ## Features
