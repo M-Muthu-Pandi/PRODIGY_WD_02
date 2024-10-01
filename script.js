@@ -1,8 +1,13 @@
 let board = ["", "", "", "", "", "", "", "", ""];
 let currentPlayer = "X";
 let gameActive = true;
+
 const statusDisplay = document.getElementById('status');
 const cells = document.querySelectorAll('.cell');
+const wStatus = document.getElementById('winning-status');
+const popup = document.querySelector('.popup');
+const closeBtn = document.getElementById('close');
+const reset = document.getElementById('reset');
 
 // Winning combinations for Tic-Tac-Toe
 const winningConditions = [
@@ -17,7 +22,7 @@ const winningConditions = [
 ];
 
 // Function to handle cell click
-function handleCellClick(event) {
+const handleCellClick = (event) => {
     const cell = event.target;
     const cellIndex = cell.getAttribute('data-index');
 
@@ -32,15 +37,15 @@ function handleCellClick(event) {
 }
 
 // Update cell with the current player's marker
-function updateCell(cell, index) {
+const updateCell = (cell, index) => {
     board[index] = currentPlayer;
     cell.textContent = currentPlayer;
 }
 
 // Check if there's a winner or the game is a draw
-function checkForWinner() {
+const checkForWinner = () => {
     let roundWon = false;
-    
+
     for (let i = 0; i < winningConditions.length; i++) {
         const [a, b, c] = winningConditions[i];
         if (board[a] && board[a] === board[b] && board[a] === board[c]) {
@@ -50,7 +55,8 @@ function checkForWinner() {
     }
 
     if (roundWon) {
-        statusDisplay.textContent = `Player ${currentPlayer} wins!`;
+        popup.style.display = "block";
+        wStatus.textContent = `Player "${currentPlayer}" wins!`;
         gameActive = false;
         return;
     }
@@ -58,25 +64,28 @@ function checkForWinner() {
     // Check for draw
     const roundDraw = !board.includes("");
     if (roundDraw) {
-        statusDisplay.textContent = "It's a draw!";
+        popup.style.display = "block";
+        wStatus.textContent = "Game ended in a draw!";
         gameActive = false;
         return;
     }
 
     // Switch to the next player
     currentPlayer = currentPlayer === "X" ? "O" : "X";
-    statusDisplay.textContent = `Player ${currentPlayer}'s turn`;
+    statusDisplay.innerHTML = `Player <span>${currentPlayer}</span>'s turn`;
 }
 
 // Reset the game
-function resetGame() {
+reset.addEventListener('click', () => {
     board = ["", "", "", "", "", "", "", "", ""];
     gameActive = true;
     currentPlayer = "X";
-    statusDisplay.textContent = `Player X's turn`;
+    statusDisplay.innerHTML = `Player <span>X</span>'s turn`;
     cells.forEach(cell => (cell.textContent = ""));
-}
-
-// Event listeners for each cell and the reset button
+});
 cells.forEach(cell => cell.addEventListener('click', handleCellClick));
-document.getElementById('reset').addEventListener('click', resetGame);
+
+//Popup Close Button
+closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+});

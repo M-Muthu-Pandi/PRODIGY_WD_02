@@ -43,7 +43,7 @@ span {
     margin-top: 10px;
 }
 
-#game-board {
+#board {
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-template-rows: repeat(3, 100px);
@@ -55,19 +55,19 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100px;
+    height: 100px;
     font-size: 2rem;
     background-color: #219ebc;
     border: 2px solid #233d4d;
     cursor: pointer;
-    user-select: none;
-
 }
 
 .cell:hover {
     background-color: #023e8a;
 }
 
-#status {
+#game-status {
     margin-top: 15px;
     font-size: 1.2rem;
     color: #461220;
@@ -89,7 +89,7 @@ button {
     position: absolute;
     top: 5%;
     left: 15%;
-    background-image: url("Images/trophy.jpg");
+    background-image: url("../Images/trophy.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
